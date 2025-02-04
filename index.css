@@ -1,17 +1,24 @@
+/* index.css */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap');
+}
+
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     background: #000000;
     color: #ffffff;
-    line-height: 1.5;
+    line-height: 1.6;
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
+    letter-spacing: -0.02em;
 }
 
 .container {
@@ -21,10 +28,11 @@ body {
 }
 
 p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    font-weight: 400;
-    max-width: 600px;
+    font-weight: 300;
+    max-width: 100%;
+    letter-spacing: 0;
 }
 
 .image-grid {
@@ -41,22 +49,42 @@ p {
 }
 
 h2 {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 300;
     margin-bottom: 1.5rem;
     font-style: italic;
-}
-
-.portfolio {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    letter-spacing: 0;
 }
 
 .portfolio-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ffffff;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.portfolio-item svg,
+.portfolio-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    opacity: 0.7;
+}
+
+.portfolio-item:hover svg,
+.portfolio-item:hover img {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+/* Override SVG colors for Lever logo */
+.portfolio-item svg .st1,
+.portfolio-item svg path[fill="#d9d9d9"],
+.portfolio-item:hover svg .st1,
+.portfolio-item:hover svg path[fill="#d9d9d9"] {
+    fill: #ffffff;
 }
 
 .history {
@@ -65,14 +93,9 @@ h2 {
 
 footer {
     margin-top: 4rem;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     opacity: 0.8;
-}
-
-.icon {
-    font-size: 1.25rem;
-    width: 1.5rem;
-    display: inline-block;
+    letter-spacing: 0;
 }
 
 @media (max-width: 640px) {
@@ -82,9 +105,5 @@ footer {
     
     .image-grid {
         gap: 0.5rem;
-    }
-    
-    p {
-        font-size: 0.9rem;
     }
 }
