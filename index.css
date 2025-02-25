@@ -24,7 +24,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 p {
@@ -42,10 +42,17 @@ p {
     margin: 3rem 0;
 }
 
+.image-wrapper {
+    aspect-ratio: 1;
+    width: 100%;
+    background-color: rgba(30, 30, 30, 0.3); /* Subtle background if image fails to load */
+}
+
 .image-grid img {
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 h2 {
@@ -56,13 +63,20 @@ h2 {
     letter-spacing: 0;
 }
 
-.portfolio-item {
+.portfolio-item, .contact-item {
     display: flex;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ffffff;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333333;
     font-style: italic;
     font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.portfolio-item:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
 }
 
 .portfolio-item svg,
@@ -87,7 +101,22 @@ h2 {
     fill: #ffffff;
 }
 
-.history {
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.contact-item a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.current-fund, .previous-highlights {
+    margin-top: 1rem;
+}
+
+.history, .contact {
     margin-top: 2rem;
 }
 
@@ -96,6 +125,7 @@ footer {
     font-size: 0.8rem;
     opacity: 0.8;
     letter-spacing: 0;
+    padding-bottom: 2rem;
 }
 
 @media (max-width: 640px) {
